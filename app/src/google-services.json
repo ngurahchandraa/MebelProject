@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "790233926125",
+    "project_id": "mebelproject-28cf0",
+    "storage_bucket": "mebelproject-28cf0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:790233926125:android:ffdf35a7f642e57e923fe4",
+        "android_client_info": {
+          "package_name": "com.example.mebelcart"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBIOcLUluLowFXY2mwIPFogMfMKrVCqJ8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
