@@ -44,6 +44,11 @@ class RegisterFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
+        binding.tvHaveAccount.setOnClickListener {
+            findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
+        }
+
         binding.apply {
             buttonRegisterRegister.setOnClickListener {
                 val user = User(
@@ -65,6 +70,7 @@ class RegisterFragment : Fragment() {
                         binding.buttonRegisterRegister.revertAnimation()
                     }
                     is Resource.Error -> {
+                        Toast.makeText(requireContext(), it.message, Toast.LENGTH_LONG).show()
                         binding.buttonRegisterRegister.revertAnimation()
                     }
                     else -> Unit
