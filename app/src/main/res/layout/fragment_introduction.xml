@@ -53,9 +53,8 @@
         android:layout_width="@dimen/smallButtonWidht"
         android:layout_height="@dimen/smallButtonHeight"
         android:text="Start"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="50dp"
         app:layout_constraintEnd_toEndOf="@id/tvWelcome"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="@id/tvWelcome"
         app:layout_constraintTop_toBottomOf="@id/tvWelcome" />
 
@@ -70,7 +69,7 @@
         android:textAlignment="center"
         android:gravity="center"
         android:text="@string/welcome"
-        android:layout_marginTop="50dp"/>
+        android:layout_marginTop="30dp"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineLeftTexture"

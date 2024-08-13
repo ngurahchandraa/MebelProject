@@ -22,4 +22,12 @@
     <color name="g_red">#FF0000</color>
     <color name="g_gray500">#969899</color>
     <color name="g_orange_yellow">#F8BA00</color>
+
+    <!-- Minimal and Modern -->
+    <color name="minimal_border_color">#D3D3D3</color> <!-- Light Gray -->
+    <color name="minimal_background_color">#CCCCCC</color> <!-- White -->
+
+    <!-- Elegant and Professional -->
+    <color name="elegant_border_color">#333333</color> <!-- Charcoal Gray -->
+    <color name="elegant_background_color">#F5F5F5</color> <!-- Light Gray -->
 </resources>

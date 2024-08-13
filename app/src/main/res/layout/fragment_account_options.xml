@@ -60,11 +60,11 @@
             android:id="@+id/buttonRegisterAccountOptions"
             android:layout_width="@dimen/mediumButtonWidht"
             android:layout_height="@dimen/mediumButtonHeight"
+            android:layout_marginTop="50dp"
             style="@style/blueButtonStyle"
             app:layout_constraintTop_toBottomOf="@id/tvWelcome"
             app:layout_constraintStart_toStartOf="@id/tvWelcome"
             app:layout_constraintEnd_toEndOf="@id/tvWelcome"
-            app:layout_constraintBottom_toBottomOf="parent"
             android:text="Register"/>
 
         <androidx.appcompat.widget.AppCompatButton
