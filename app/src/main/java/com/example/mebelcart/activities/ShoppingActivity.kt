@@ -7,7 +7,9 @@ import androidx.navigation.ui.setupWithNavController
 import com.example.mebelcart.R
 import com.example.mebelcart.databinding.ActivityShoppingBinding
 import com.google.firebase.FirebaseApp
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ShoppingActivity : AppCompatActivity() {
 
     val binding by lazy {
