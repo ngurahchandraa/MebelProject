@@ -71,15 +71,17 @@
 
         <TextView
             android:id="@+id/tvProductDescription"
+            style="@style/h3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/h3"
-            android:textColor="@color/g_gray700"
-            app:layout_constraintTop_toBottomOf="@id/linearTittlePrice"
-            app:layout_constraintStart_toStartOf="@id/linearTittlePrice"
             android:text="$600"
+            android:justificationMode="inter_word"
+            android:paddingRight="25dp"
+            android:textColor="@color/g_gray700"
+            android:textSize="14sp"
             android:textStyle="bold"
-            android:textSize="12sp"/>
+            app:layout_constraintStart_toStartOf="@id/linearTittlePrice"
+            app:layout_constraintTop_toBottomOf="@id/linearTittlePrice" />
         
         <View
             android:id="@+id/line"
@@ -140,7 +142,7 @@
                     android:text="Size"/>
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rvSize"
+                    android:id="@+id/rv_sizes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
 
@@ -160,7 +162,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginTop="45dp"
             android:layout_marginBottom="20dp"
-            android:text="Login"
+            android:text="Add to cart"
             app:spinning_bar_color="@color/white"/>
 
         
