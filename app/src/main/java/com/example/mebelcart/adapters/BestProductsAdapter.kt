@@ -18,15 +18,14 @@ class BestProductsAdapter: RecyclerView.Adapter<BestProductsAdapter.BestProducts
     inner class BestProductsViewHolder(private val binding: ProductRvItemBinding): RecyclerView.ViewHolder(binding.root){
         fun bind(product: Product){
             binding.apply {
-
+                product.offerPercentage?.let {
                     val priceAfterOffer = product.offerPercentage.getProductPrice(product.price)
-                    tvNewPrice.text = "$ ${String.format("%.2f",priceAfterOffer)}"
-                    tvPrice.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
-
-
+                    tvNewPrice.text = "$ ${String.format("%.2f", priceAfterOffer)}"
+                    tvPrice.paintFlags = tvPrice.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
+                }
                 if (product.offerPercentage == null)
                     tvNewPrice.visibility = View.INVISIBLE
-
+                Glide.with(itemView).load(product.images[0]).into(imgProduct)
                 tvPrice.text = "$ ${product.price}"
                 tvName.text = product.name
             }

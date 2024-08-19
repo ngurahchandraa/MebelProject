@@ -25,29 +25,29 @@
 
         <TextView
             android:id="@+id/tvSpecialProductName"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:text="Scotch Premium"
-            app:layout_constraintStart_toEndOf="@id/imageSpecialRvItem"
-            app:layout_constraintTop_toTopOf="@id/imageSpecialRvItem"
-            android:layout_marginTop="7dp"
+            android:layout_width="135dp"
+            android:layout_height="50dp"
             android:layout_marginStart="10dp"
+            android:layout_marginTop="7dp"
             android:fontFamily="@font/poppins_thin"
-            android:textStyle="bold"
+            android:maxLines="2"
+            android:text="Table With More Image"
             android:textColor="@color/black"
             android:textSize="15sp"
-            android:maxLines="2"/>
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/imageSpecialRvItem"
+            app:layout_constraintTop_toTopOf="@id/imageSpecialRvItem" />
 
         <TextView
             android:id="@+id/tvSpecialProductPrice"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/sf_pro_display"
             android:text="$1600"
-            app:layout_constraintStart_toStartOf="@id/tvSpecialProductName"
-            app:layout_constraintTop_toBottomOf="@id/tvSpecialProductName"
             android:textColor="@color/black"
             android:textSize="14sp"
-            android:fontFamily="@font/sf_pro_display"/>
+            app:layout_constraintStart_toStartOf="@id/tvSpecialProductName"
+            app:layout_constraintTop_toBottomOf="@id/tvSpecialProductName" />
 
         <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
             android:id="@+id/btn_add_to_cart"

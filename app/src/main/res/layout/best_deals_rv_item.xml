@@ -25,7 +25,7 @@
         <TextView
             android:id="@+id/tv_deal_product_name"
             android:layout_width="120dp"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:text="Scotch Premium"
             app:layout_constraintStart_toEndOf="@id/img_best_deal"
             app:layout_constraintTop_toTopOf="@id/img_best_deal"
