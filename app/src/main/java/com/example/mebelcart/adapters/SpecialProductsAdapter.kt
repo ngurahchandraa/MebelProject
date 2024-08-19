@@ -10,7 +10,8 @@ import com.example.mebelcart.data.Product
 import com.example.mebelcart.databinding.SpecialRvItemBinding
 import org.jetbrains.annotations.Async
 
-class SpecialProductsAdapter: RecyclerView.Adapter<SpecialProductsAdapter.SpecialProductsViewHolder>() {
+class SpecialProductsAdapter :
+    RecyclerView.Adapter<SpecialProductsAdapter.SpecialProductsViewHolder>() {
 
     inner class SpecialProductsViewHolder(private val binding: SpecialRvItemBinding):
         RecyclerView.ViewHolder(binding.root){

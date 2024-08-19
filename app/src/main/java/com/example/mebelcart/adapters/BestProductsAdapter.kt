@@ -11,20 +11,19 @@ import com.bumptech.glide.Glide
 import com.example.mebelcart.data.Product
 import com.example.mebelcart.databinding.BestDealsRvItemBinding
 import com.example.mebelcart.databinding.ProductRvItemBinding
+import com.example.mebelcart.helper.getProductPrice
 
 class BestProductsAdapter: RecyclerView.Adapter<BestProductsAdapter.BestProductsViewHolder>() {
 
     inner class BestProductsViewHolder(private val binding: ProductRvItemBinding): RecyclerView.ViewHolder(binding.root){
         fun bind(product: Product){
             binding.apply {
-                Glide.with(itemView).load(product.images[0]).into(imgProduct)
-                product.offerPercentage?.let {
-                    val remainingPricePercentage = 1f - it
-                    val priceAfterOffer = remainingPricePercentage * product.price
+
+                    val priceAfterOffer = product.offerPercentage.getProductPrice(product.price)
                     tvNewPrice.text = "$ ${String.format("%.2f",priceAfterOffer)}"
                     tvPrice.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
 
-                }
+
                 if (product.offerPercentage == null)
                     tvNewPrice.visibility = View.INVISIBLE
 
