@@ -1,11 +1,14 @@
 package com.example.mebelcart.data.order
 
+import android.os.Parcelable
 import com.example.mebelcart.data.Address
 import com.example.mebelcart.data.CartProduct
+import kotlinx.parcelize.Parcelize
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.random.Random.Default.nextLong
 
+@Parcelize
 data class Order (
     val orderStatus: String = "",
     val totalPrice: Float = 0f,
@@ -14,4 +17,4 @@ data class Order (
     val date : String = SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH).format(Date()),
     val orderId: Long = nextLong(0,100_000_000_000) + totalPrice.toLong()
 
-        )
+        ): Parcelable

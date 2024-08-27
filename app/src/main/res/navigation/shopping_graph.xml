@@ -81,5 +81,17 @@
     <fragment
         android:id="@+id/ordersFragment"
         android:name="com.example.mebelcart.fragments.settings.AllOrdersFragment"
-        android:label="OrdersFragment" />
+        android:label="OrdersFragment" >
+        <action
+            android:id="@+id/action_ordersFragment_to_orderDetailFragment"
+            app:destination="@id/orderDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderDetailFragment"
+        android:name="com.example.mebelcart.fragments.settings.OrderDetailFragment"
+        android:label="OrderDetailFragment" >
+        <argument
+            android:name="order"
+            app:argType="com.example.mebelcart.data.order.Order" />
+    </fragment>
 </navigation>

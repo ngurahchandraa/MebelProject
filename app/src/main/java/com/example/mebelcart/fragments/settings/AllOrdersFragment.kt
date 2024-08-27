@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mebelcart.adapters.AllOrdersAdapter
@@ -37,6 +38,10 @@ class AllOrdersFragment : Fragment(){
 
         setupOrdersRv()
 
+        binding.imageCloseOrders.setOnClickListener {
+            findNavController().navigateUp()
+        }
+
         lifecycleScope.launchWhenStarted {
             viewModel.allOrders.collectLatest {
                 when (it) {
@@ -57,6 +62,11 @@ class AllOrdersFragment : Fragment(){
                     else -> Unit
                 }
             }
+        }
+
+        ordersAdapter.onClick = {
+            val action = AllOrdersFragmentDirections.actionOrdersFragmentToOrderDetailFragment(it)
+            findNavController().navigate(action)
         }
     }
 
