@@ -26,6 +26,13 @@ class AddressViewModel @Inject constructor(
     private val _error = MutableSharedFlow<String>()
     val error = _error.asSharedFlow()
 
+
+    private val _updateAddress = MutableStateFlow<Resource<Address>>(Resource.Unspecified())
+    val updateAddress = _updateAddress.asStateFlow()
+
+    private val _deleteAddress = MutableStateFlow<Resource<Boolean>>(Resource.Unspecified())
+    val deleteAddress = _deleteAddress.asStateFlow()
+
     fun addAddress(address : Address) {
         val validateInputs = validateInputs(address)
 
@@ -43,6 +50,7 @@ class AddressViewModel @Inject constructor(
             }
         }
     }
+
 
     private fun validateInputs(address: Address): Boolean {
         return address.addressTitle.trim().isNotEmpty() &&

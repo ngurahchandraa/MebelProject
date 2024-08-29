@@ -20,6 +20,7 @@ import com.example.mebelcart.databinding.FragmentRegisterBinding
 import com.example.mebelcart.util.RegisterValidation
 import com.example.mebelcart.viewmodel.RegisterViewModel
 import com.example.mebelcart.util.Resource
+import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collect
@@ -68,6 +69,10 @@ class RegisterFragment : Fragment() {
                     }
                     is Resource.Success -> {
                         binding.buttonRegisterRegister.revertAnimation()
+
+                        findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
+                        Snackbar.make(requireView(),"Account Succesfully Created!",
+                            Snackbar.LENGTH_LONG).show()
                     }
                     is Resource.Error -> {
                         Toast.makeText(requireContext(), it.message, Toast.LENGTH_LONG).show()

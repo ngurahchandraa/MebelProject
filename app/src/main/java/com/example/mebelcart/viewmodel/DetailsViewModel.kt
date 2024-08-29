@@ -1,5 +1,6 @@
 package com.example.mebelcart.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.mebelcart.data.CartProduct
@@ -26,8 +27,14 @@ class DetailsViewModel @Inject constructor(
     val addToCart = _addToCart.asStateFlow()
 
     fun addUpdateProductInCart(cartProduct: CartProduct){
+        val userId = auth.uid ?: run {
+            viewModelScope.launch { _addToCart.emit(Resource.Error("User not authenticated")) }
+            return
+        }
+        Log.d("DetailsViewModel", "Current User UID: $userId")
+
         viewModelScope.launch { _addToCart.emit(Resource.Loading()) }
-        firestore.collection("user").document(auth.uid!!).collection("cart")
+        firestore.collection("user").document(userId).collection("cart")
             .whereEqualTo("product.id", cartProduct.product.id).get()
             .addOnSuccessListener {
                 it.documents.let { //add new product

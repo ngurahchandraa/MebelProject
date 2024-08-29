@@ -51,6 +51,7 @@
             app:layout_constraintTop_toBottomOf="@id/tvLetsLogin"
             android:textAlignment="center"
             android:gravity="center"
+            android:textColor="@color/g_blue"
             android:text="Don't have an account? Register"
             android:layout_marginTop="10dp"/>
         
